@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nopalli Dispatching</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    {% block css_styling %}
+    {% endblock %}
+</head>
+<body>
+  <header>
+      <p class="company-name">Nopalli Dispatching</p>
+      <nav class="navbar">
+        <a href="">Home</a>
+        <a href="">Dispatching</a>
+        <a href="">Accounting</a>
+        <a href="">Reports</a>
+        <a class="navbar-last-button" href="">Admin</a>
+      </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>
+
+
+
+

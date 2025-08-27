@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block css_styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='dispatches.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="search-form-container">
+      <form class="search-form" action="" method="post">
+        <div class="search-field">
+            <label class="search-label" for="">Dispatch Ref</label>
+            <input type="text" placeholder="Ref">
+        </div>
+        <div class="search-field">
+            <label class="search-label" for="">Broker</label>
+            <input type="text" placeholder="Broker">
+        </div>
+        <div class="search-field">
+            <label class="search-label" for="">Container Number</label>
+            <input type="text" placeholder="Container Number">
+        </div>
+        <div class="search-field">
+            <label class="search-label">Driver</label>
+            <input type="text" placeholder="Driver">
+        </div>
+        <div class="search-field">
+            <label class="search-label" for="">Stop Location</label>
+            <input type="text" placeholder="Stop Location">
+        </div>
+        <div class="search-field">
+            <label class="search-label" for="">Status</label>
+            <input list="statuses">
+            <datalist id="statuses">
+              <option value="Draft"></option>
+              <option value="Started"></option>
+              <option value="Postponed"></option>
+              <option value="Completed"></option>
+              <option value="Cancelled"></option>
+            </datalist>
+        </div>
+        <div class="search-field submit">
+            <button class="search-button" type="button">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="create-container">
+      <a class="btn-create-broker" href="#popup2">Add Location</a>
+      <a class="btn-create-dispatch" href="#popup3">Create Dispatch</a>
+    </div>
+
+    <div class="popup-create-location" id="popup2">
+      <div class="popup-inner-create-location">
+        <div class="popup-header-container">
+          <h3 class="popup-header">Add Location</h3>
+          <a class="popup-close-btn" href="#">X</a>
+        </div>
+        <form class="create-location-form-container" action="" method="post">
+          <div>
+            <label for="">Name</label>
+          <input type="text" name="name" id="" placeholder="Name">
+          </div>
+          <div>
+            <label for="">Street Address</label>
+            <input type="text" name="street_address" id="" placeholder="Street Address">
+          </div>
+          <div>
+            <label for="">City</label>
+            <input type="text" name="city" id="" placeholder="City">
+          </div>
+          <div>
+            <label for="">State</label>
+            <input type="text" name="state" id="" placeholder="State">
+          </div>
+          <div>
+            <label for="">Zipcode</label>
+            <input type="text" name="zipcode" id="" placeholder="Zipcode">
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup-create-dispatch" id="popup3">
+      <div class="popup-inner-create-dispatch">
+        <div class="popup-header-container">
+          <h3 class="popup-header">Create Dispatch</h3>
+          <a class="popup-close-btn" href="#">X</a>
+        </div>
+        <form class="create-dispatch-form-container" action="" method="post">
+          <div>
+            <label for="">Broker</label>
+          <input type="text" name="" id="" placeholder="Broker">
+          </div>
+          <div>
+            <label for="">Driver</label>
+            <input type="text" name="" id="" placeholder="Driver">
+          </div>
+          <div>
+            <label for="">Container</label>
+            <input type="text" name="" id="" placeholder="Container">
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions1">
+            <datalist id="instructions1">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions2">
+            <datalist id="instructions2">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions3">
+            <datalist id="instructions3">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions4">
+            <datalist id="instructions4">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions5">
+            <datalist id="instructions5">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions6">
+            <datalist id="instructions6">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions7">
+            <datalist id="instructions7">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <label for="">Stop</label>
+            <input type="text" name="" id="" placeholder="Stop">
+            <label for="">Task</label>
+            <input list="instructions8">
+            <datalist id="instructions8">
+              <option value="PREPULL CONTAINER"></option>
+              <option value="PICKUP EMPTY CONTAINER"></option>
+              <option value="PICKUP LOADED CONTAINER"></option>
+              <option value="LIVE UNLOAD CONTAINER"></option>
+              <option value="LIVE LOAD CONTAINER"></option>
+              <option value="DROP EMPTY CONTAINER"></option>
+              <option value="DROP LOADED CONTAINER"></option>
+              <option value="TERMINATE CONTAINER"></option>
+              <option value="BOBTAIL TO NEXT STOP"></option>
+            </datalist>
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+          
+      </div>
+    </div>
+{% endblock %}

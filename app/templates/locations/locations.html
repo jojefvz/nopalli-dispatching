@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block css_styling %}
+<link rel="stylesheet" href="{{ url_for('static', filename='locations.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Locations</h2>
+   <div class="create-container">
+      <a class="btn-create-location" href="#popup1">Add Location</a>
+  </div>
+
+  <div class="popup-create-location" id="popup1">
+      <div class="popup-inner-create-location">
+        <div class="popup-header-container">
+          <h3 class="popup-header">Add Location</h3>
+          <a class="popup-close-btn" href="#">X</a>
+        </div>
+        <form class="create-location-form-container" action="" method="post">
+          <div>
+            <label for="">Name</label>
+          <input type="text" name="name" id="" placeholder="Name">
+          </div>
+          <div>
+            <label for="">Street Address</label>
+            <input type="text" name="street_address" id="" placeholder="Street Address">
+          </div>
+          <div>
+            <label for="">City</label>
+            <input type="text" name="city" id="" placeholder="City">
+          </div>
+          <div>
+            <label for="">State</label>
+            <input type="text" name="state" id="" placeholder="State">
+          </div>
+          <div>
+            <label for="">Zipcode</label>
+            <input type="text" name="zipcode" id="" placeholder="Zipcode">
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock %}
+

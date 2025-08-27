@@ -1,0 +1,33 @@
+header {
+    padding: 0 10px;
+}
+.company-name {
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.navbar {
+    background-color: aliceblue;
+    display: flex;
+    justify-content:flex-end;
+    border: 2px solid;
+    border-color: rgb(125, 154, 179);
+    border-radius: 10px;
+    column-gap: 5px;
+    height: 30px;
+    padding: 5px 0;
+}
+
+.navbar a {
+    color: white;
+    background-color: rgb(125, 154, 179);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 6px;
+
+}
+
+.navbar-last-button {
+    margin-right: 6px;
+}

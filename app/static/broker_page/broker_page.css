@@ -1,0 +1,181 @@
+.create-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.btn-create-broker {
+        text-decoration: none;
+        background-color: rgb(121, 150, 238);
+        color: white;
+        font-size: medium;
+        height: 20px;
+        width: 150px;
+        padding: 6px;
+        border-color: rgb(97, 131, 234);
+        border-style: solid;
+        border-radius: 22px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color .5s;
+}
+
+.btn-create-broker:hover {
+    background-color: rgb(78, 117, 234);;
+    color: white;
+}
+
+.btn-create-broker:active {
+    opacity: 0.7;
+}
+/* ---------- POPUP ---------- */
+.popup-create-broker {
+    opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: rgba(0, 0, 0, 0.2);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup-inner-create-broker {
+    background-color: #FFF;
+	padding: 32px 16px;
+	max-width: 768px;
+	border-radius: 16px;
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+.popup-create-broker:target {
+    opacity: 1;
+	pointer-events: all;
+}
+
+.popup-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.popup-header {
+    margin: 0;
+}
+
+.popup-close-btn {
+    margin: 0;
+    color: black;
+}
+
+.create-broker-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    width: 400px;
+}
+
+/* ----------------------------- BROKER ROW -------------------------------- */
+
+.broker-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100px;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: black;
+}
+
+.broker-detail {
+    color: black;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* EDIT BROKER */
+.btn-edit-broker {
+        text-decoration: none;
+        background-color: rgb(121, 150, 238);
+        color: white;
+        font-size: 16px;
+        padding: 4px;
+        border-color: rgb(97, 131, 234);
+        border-style: solid;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color .5s;
+}
+
+.btn-edit-broker:hover {
+    background-color: rgb(78, 117, 234);;
+    color: white;
+}
+
+.btn-edit-broker:active {
+    opacity: 0.7;
+}
+
+.popup-edit-broker {
+    opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	background-color: rgba(0, 0, 0, 0.2);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup-inner-edit-broker {
+    background-color: #FFF;
+	padding: 32px 16px;
+	max-width: 768px;
+	border-radius: 16px;
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+.popup-edit-broker:target {
+    opacity: 1;
+	pointer-events: all;
+}
+
+.popup-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.popup-header {
+    margin: 0;
+}
+
+.popup-close-btn {
+    margin: 0;
+    color: black;
+}
+
+.edit-broker-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    width: 400px;
+}
