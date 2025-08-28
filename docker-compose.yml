@@ -1,4 +1,20 @@
 services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=nopalli
+    ports:
+      - 5432:5432
+    volumes:
+      - "./nopalli_data:/var/lib/postgresql/data:rw"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root -d nopalli"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   web:
     build: .
     ports:
@@ -8,9 +24,6 @@ services:
     environment:
       - FLASK_DEBUG=1
     command: flask run -h 0.0.0.0
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=nopalli
+    depends_on:
+      db:
+        condition: service_healthy 

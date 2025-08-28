@@ -5,9 +5,9 @@ from ..location.aggregate import Address
 
 class Broker(AggregateRoot):
     def __init__(self, name: str, address: Address):
+        super().__init__()
         self.name = name
         self.address = address
-        self.events = []
         
 def broker_factory(name: str, street_address: str, city: str, state: str, zipcode: str):
     broker = Broker(
@@ -27,5 +27,5 @@ def broker_factory(name: str, street_address: str, city: str, state: str, zipcod
         broker.address.state,
         broker.address.zipcode
     ))
-
+    print(f"BROKER EVENTS AT BROKER FACTORY: {broker.events}")
     return broker

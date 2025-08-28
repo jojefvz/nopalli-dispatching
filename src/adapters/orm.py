@@ -95,13 +95,6 @@ def start_mappers():
                 }
         )
     
-
-
 connection_str = 'postgresql+psycopg2://root:root@db:5432/nopalli'
 engine = create_engine(connection_str)
 mapper_registry.metadata.create_all(engine)
-
-
-# from sqlalchemy import Table, Column, create_engine, String, Integer, Enum, select
-# from sqlalchemy.orm import registry, Session
-# from domain.dispatch import Dispatch, DispatchStatus, Container, ContainerList

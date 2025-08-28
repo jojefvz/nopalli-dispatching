@@ -9,8 +9,8 @@ from src.views import brokers_view
 
 @bp.route('/brokers', methods=['GET'])
 def brokers_page():
-    uow = unit_of_work.SqlAlchemyUnitOfWork()
-    brokers = brokers_view.brokers(uow)
+    uow = unit_of_work.BrokerUnitOfWork()
+    brokers = brokers_view.all_brokers(uow)
     return render_template('brokers/brokers.html', brokers=brokers)
 
 
@@ -23,9 +23,7 @@ def create_broker():
         state=request.form['state'],
         zipcode=request.form['zipcode']
     )
-
-    uow = unit_of_work.SqlAlchemyUnitOfWork()
-    uow.repo = BrokerRepository
+    uow = unit_of_work.BrokerUnitOfWork()
     messagebus.handle(cmd, uow)
 
     return redirect(url_for('brokers.brokers_page'))
